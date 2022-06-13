@@ -1,8 +1,8 @@
 ---
-typora-root-url: /home/sf/文档/Document/picture
+typora-root-url: ../picture
 ---
 
-#  Git本地管理及Github远程管理学习1
+#  Git本地管理及Github远程管理学习
 
 ## Git本地管理
 
@@ -215,25 +215,82 @@ Git创建一个分支很快，只增加一个`dev`指针，改变`HEAD`的指向
 
 ![](/branch2.png)
 
+创建分支
 
+```shell
+git checkout -b dev # 创建分支并切换至新分支
+```
+
+```shell
+git branch dev # 创建分支
+git checkout dev # 切换分支
+```
+
+```SHELL
+git switch -c dev #创建分支并切换至新分支
+git switch dev #切换至已有分支
+```
+
+查看当前分支
+
+```shell
+git branch
+```
+
+合并分支
+
+```shell
+git merge dev
+```
+
+删除分支
+
+```shell
+git branch -d dev
+```
 
 ##### 2.2.2 解决冲突
 
-##### 2.2.3 分支管理策略
+当对不同分支的操作出现冲突时，需要解决冲突才能合并分支。
 
-##### 2.2.4 Bug分支
+![](/branch3.png)
 
-##### 2.2.5 Feature分支
+Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。
 
-##### 2.2.6 多人协作
+手动修改解决冲突后再合并分支，用带参数的`git log`也可以看到分支的合并情况，用`git log --graph`命令可以看到分支合并图。
 
-##### 2.2.7 Rebase
+##### 2.2.3 多人协作
 
+多人协作的工作模式：
 
+1. 首先，用`git push origin <branch-name>`推送自己的修改；
+2. 如果推送失败，则因为远程分支比本地更新，需要先用`git pull`试图合并；
+3. 如果合并有冲突，则解决冲突，并在本地提交；
+4. 没有冲突或者解决掉冲突后，再用`git push origin <branch-name>`推送就能成功！
+
+如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`。
+
+- 查看远程库信息，使用`git remote -v`；
+- 本地新建的分支如果不推送到远程，对其他人就是不可见的；
+- 从本地推送分支，使用`git push origin branch-name`，如果推送失败，先用`git pull`抓取远程的新提交；
+- 在本地创建和远程分支对应的分支，使用`git checkout -b branch-name origin/branch-name`，本地和远程分支的名称最好一致；
+- 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；
+- 从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
 
 #### 2.3 标签管理
 
+发布一个版本时，通常先在版本库中打一个标签（tag），唯一确定了打标签时刻的版本。
+
+将来无论什么时候，取某个标签的版本，就是将打标签时刻的历史版本取出来。标签也是版本库的一个快照。
+
 ##### 2.3.1 创建标签
+
+```shell
+git branch # 查看分支
+git checkout master # 选择需要打标签的分支
+git tag v1.0 #打标签
+git tag # 查看标签
+```
 
 ##### 2.3.2 操作标签
 
