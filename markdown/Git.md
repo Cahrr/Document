@@ -1,4 +1,8 @@
-#  Git本地管理及Github远程管理学习
+---
+typora-root-url: /home/sf/文档/Document/picture
+---
+
+#  Git本地管理及Github远程管理学习1
 
 ## Git本地管理
 
@@ -176,15 +180,42 @@ git remote rm origin
 
 ##### 2.1.2 从远程库克隆
 
-
-
 ```
 git clone git@github.com:username/repository.git
+git clone https://github.com/username/repository.git
 ```
+
+Git支持多种协议，包括https和ssh，ssh协议速度最快。
 
 #### 2.2 分支管理
 
+创建一个专属分支，继续在原来的分支上正常工作，开发完毕后一次性合并到原来的分支上，兼顾安全与效率。
+
 ##### 2.2.1 创建与合并分支
+
+在Git中的主分支即`master`分支，为一条时间线。`HEAD`严格来说不是指向提交，而是指向`master`，`master`才是指向提交的，所以`HEAD`指向的是当前分支。
+
+`master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点：
+
+![](/branch.png)
+
+每次提交，`master`分支都会向前移动一步，随着你不断提交，`master`分支的线也越来越长。
+
+当创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
+
+![](/branch0.png)
+
+Git创建一个分支很快，只增加一个`dev`指针，改变`HEAD`的指向，工作区的文件没有任何变化。
+
+从现在开始，对工作区的修改和提交针对`dev`分支，比如新提交一次后，`dev`指针往前移动一步，而`master`指针不变：
+
+![](/branch1.png)
+
+在`dev`上的工作完成后，可以将`dev`合并至`master`上，将`master`指向`dev`的当前提交，完成合并：
+
+![](/branch2.png)
+
+
 
 ##### 2.2.2 解决冲突
 
