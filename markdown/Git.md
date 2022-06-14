@@ -289,7 +289,7 @@ Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。
 git branch # 查看分支
 git checkout master # 选择需要打标签的分支
 git tag v1.0 #打标签
-git tag # 查看标签
+git tag # 查看标签 
 ```
 
 ##### 2.3.2 操作标签
