@@ -228,11 +228,93 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 - 源码下载与编译
 
   ```shell
-  cd src
+  cd ~/catkin_ws/src
   git clone https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.git
   cd ..
   # 必须使用 -j1 参数，否则报错
   catkin_make -j1
+  # 添加工作空间环境变量
+  source ~/catkin_ws/devel/setup.bash
+  ```
+  
+
+##### 2.2.3 SLAM建图
+
+- 运行算法
+
+  ```shell
+  roslaunch lego_loam run.launch
   ```
 
+- 运行rosbag
+
+  ```shell
+  # rosbag中激光雷达点云数据与IMU数据话题名称一致，否则需要更改
+  rosbag play *.bag --clock --topic /velodyne_points /imu/data
+  ```
+
+- 配置参数解析与修改
+
+  在线建图与离线建图修改
+
+  /LeGO-LOAM/LeGO-LOAM/launch/run.launch
+
+  ```html
+  <launch>
+      
+      <!--- Sim Time -->
+      <param name="/use_sim_time" value="true" />
+      # 在线建图为false，离线建图为true
+  ```
+
+  rostopic名称修改：针对具体使用IMU话题名称
+
+  激光雷达参数修改：针对速腾聚创RoboSense RS-Helios 32线激光雷达
+
+  /LeGO-LOAM/LeGO-LOAM/include/utility.h
+
+  ```cpp
+  // 程序订阅的rostopic名称
+  extern const string pointCloudTopic = "/velodyne_points";
+  // extern const string imuTopic = "/imu/data";
+  extern const string imuTopic = "/mavros/imu/data"; // 使用无人机飞控内置IMU
   
+  // RS-Helios
+  extern const int N_SCAN = 32; // 激光雷达线数
+  extern const int Horizon_SCAN = 1800; // 每条线发射水平点数
+  extern const float ang_res_x = 0.2; // 水平分辨率
+  extern const float ang_res_y = 1.5; // 垂直分辨率
+  extern const float ang_bottom = 55; //最下方激光与水平面夹角
+  extern const int groundScanInd = 10; // 地面线数
+  ```
+
+  https://zhuanlan.zhihu.com/p/386449627
+
+  https://blog.csdn.net/weixin_44208916/article/details/106094490
+
+- 点云地图保存与查看
+
+  接近建图结束时执行record，录制建出地图的话题
+
+  ```shell
+  rosbag record -o out /laser_cloud_surround
+  ```
+
+  另存为pcd格式文件
+
+  ```shell
+  rosrun pcl_ros bag_to_pcd input.bag /laser_cloud_surround pcd
+  ```
+
+  最后一个pcd文件为最终建图结果，可使用pcl_viewer查看
+
+  ```shell
+  pcl_viewer xx.pcd
+  ```
+
+  https://blog.csdn.net/m0_37931718/article/details/107832573
+
+- 相关参考
+
+  https://blog.csdn.net/weixin_41281151/article/details/113558183
+
