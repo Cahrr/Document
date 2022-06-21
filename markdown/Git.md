@@ -1,5 +1,5 @@
 ---
-typora-root-url: ../picture
+typora-root-url: ..\picture
 ---
 
 #  Git本地管理及Github远程管理学习
@@ -197,23 +197,23 @@ Git支持多种协议，包括https和ssh，ssh协议速度最快。
 
 `master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点：
 
-![](/branch.png)
+![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211839466.png)
 
 每次提交，`master`分支都会向前移动一步，随着你不断提交，`master`分支的线也越来越长。
 
 当创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
 
-![](/branch0.png)
+![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211839476.png)
 
 Git创建一个分支很快，只增加一个`dev`指针，改变`HEAD`的指向，工作区的文件没有任何变化。
 
 从现在开始，对工作区的修改和提交针对`dev`分支，比如新提交一次后，`dev`指针往前移动一步，而`master`指针不变：
 
-![](/branch1.png)
+![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211840910.png)
 
 在`dev`上的工作完成后，可以将`dev`合并至`master`上，将`master`指向`dev`的当前提交，完成合并：
 
-![](/branch2.png)
+![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211840580.png)
 
 创建分支
 
@@ -253,7 +253,7 @@ git branch -d dev
 
 当对不同分支的操作出现冲突时，需要解决冲突才能合并分支。
 
-![](/branch3.png)
+![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211840923.png)
 
 Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。
 

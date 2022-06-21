@@ -14,23 +14,24 @@ typora-root-url: ..\picture
 
   根据文档安装并查看IP地址，配置电脑IP地址并ping通，记录激光雷达IP地址。
 
-  ![](/image_11.png)
+  ![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211815918.png)
 
 - 安装RSView
 
   根据文档安装RSView，网口连接激光雷达，点击左上方雷达图标，选择对应型号查看点云。
 
-  ![image_10](/image_10.png)
+  ![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211816707.png)
   
   https://www.robosense.cn/rslidar/RS-Helios
   
+
 ##### 2.1.2 配置ROS开发环境
 
 - 下载rslidar_sdk
 
   下载地址：https://github.com/RoboSense-LiDAR/rslidar_sdk/releases/download/v1.3.0/rslidar_sdk.tar.gz
 
-  ![4060cba6d7fc4e22a69842eb03e3f7c2](/4060cba6d7fc4e22a69842eb03e3f7c2.png)
+  ![](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206211831997.png)
   
   下载此rslidar_sdk.tar.gz 文件，因为此文件内容齐全，不需要再下载子模块rs_driver的代码。
   
@@ -141,7 +142,7 @@ typora-root-url: ..\picture
   roslaunch rs_to_velodyne rs_tovelodyne.launch
   ```
 
-  订阅topic：/rslidar_points，发布topic： /velodyne_points
+  订阅topic：`/rslidar_points`，发布topic： `/velodyne_points`
 
   https://blog.csdn.net/weixin_44023934/article/details/123845089
 
@@ -186,7 +187,7 @@ typora-root-url: ..\picture
 
   在线建图与离线建图修改
 
-  /LeGO-LOAM/LeGO-LOAM/launch/run.launch
+  `/LeGO-LOAM/LeGO-LOAM/launch/run.launch`
 
   ```html
   <launch>
@@ -200,7 +201,7 @@ typora-root-url: ..\picture
 
   激光雷达参数修改：针对速腾聚创RoboSense RS-Helios 32线激光雷达
 
-  /LeGO-LOAM/LeGO-LOAM/include/utility.h
+  `/LeGO-LOAM/LeGO-LOAM/include/utility.h`
 
   ```cpp
   // 程序订阅的rostopic名称
@@ -271,6 +272,8 @@ typora-root-url: ..\picture
   https://blog.csdn.net/weixin_43863870/article/details/120044876
 
   https://blog.csdn.net/weixin_43990795/article/details/121536851
+  
+  https://blog.csdn.net/weixin_44444810/article/details/121659270
 
 #### 2.3 使用移动小车平台进行激光点云数据采集
 
