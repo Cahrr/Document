@@ -4,7 +4,7 @@ typora-root-url: ..\picture
 
 #  实验室无人机平台及相关应用
 
-## 无人机平台
+## 激光雷达SLAM建图
 
 #### 2.1 RoboSense RS-Helios 32线激光雷达配置与使用
 
@@ -340,7 +340,7 @@ typora-root-url: ..\picture
   使用rosbag录制rostopic方式记录数据
 
   ```shell
-  rosbag record -o rslidar.bag /velodyne_points /mavros/imu/data /usb_cam/image_raw
+  rosbag record -o rslidar3.bag /velodyne_points /mavros/imu/data /usb_cam/image_raw
   ```
 
   数据采集结束 `Ctrl+c`必须正常结束终端，否则bag文件损坏无法读取
