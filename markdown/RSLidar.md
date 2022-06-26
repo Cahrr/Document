@@ -340,7 +340,7 @@ typora-root-url: ..\picture
   使用rosbag录制rostopic方式记录数据
 
   ```shell
-  rosbag record -o rslidar3.bag /velodyne_points /mavros/imu/data /usb_cam/image_raw
+  rosbag record -o rslidar.bag /velodyne_points /mavros/imu/data /usb_cam/image_raw
   ```
 
   数据采集结束 `Ctrl+c`必须正常结束终端，否则bag文件损坏无法读取
