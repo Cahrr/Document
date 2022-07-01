@@ -348,5 +348,27 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
   sudo watch -n 1 pkill -USR1 -x dd
   ```
   
-  
 
+##### 2.2.2 远程控制
+
+- 远程桌面软件
+
+  使用 Nomachine 或 ToDesk 作为远程桌面查看与控制软件，局域网内使用Nomachine，互联网使用ToDesk。
+
+- 远程控制流程
+
+  将无人机端 Nano 与地面端电脑连接同一WIFI，即同一无线路由器，保证在同一局域网内，在无人机端与地面端电脑分别运行Nomachine，在地面端 Nomachine 输入无人机端 Nano 网络地址。
+
+  图片
+
+  查看Nano无线网卡IP地址
+
+  ```shell
+  ifconfig
+  ```
+
+  其中`wlan0`为无线网卡，其他为有线网卡等。
+
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206291544057.png" alt="image-20220629154400924" style="zoom:67%;" />
+  
+  
