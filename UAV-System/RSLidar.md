@@ -6,9 +6,11 @@ typora-root-url: ..\picture
 
 ## 激光雷达SLAM建图
 
-#### 2.1 RoboSense RS-Helios 32线激光雷达配置与使用
+#### 1.1 RoboSense RS-Helios 32线激光雷达配置与使用
 
-##### 2.1.1 网口配置激光雷达
+<img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022155806.png" alt="img" style="zoom: 50%;" />
+
+##### 1.1.1 网口配置激光雷达
 
 - 安装wireshark
 
@@ -25,7 +27,7 @@ typora-root-url: ..\picture
   https://www.robosense.cn/rslidar/RS-Helios
   
 
-##### 2.1.2 配置ROS开发环境
+##### 1.1.2 配置ROS开发环境
 
 - 下载rslidar_sdk
 
@@ -107,7 +109,7 @@ typora-root-url: ..\picture
   roslaunch start.launch
   ```
 
-##### 2.1.3 将rslidar点云数据转换为Velodyne点云格式
+##### 1.1.3 将rslidar点云数据转换为Velodyne点云格式
 
 - 下载源码
 
@@ -146,11 +148,9 @@ typora-root-url: ..\picture
 
   https://blog.csdn.net/weixin_44023934/article/details/123845089
 
+#### 	1.2 LeGO-LOAM 算法激光雷达建图
 
-
-#### 	2.2 LeGO-LOAM 算法激光雷达建图
-
-##### 2.2.1 依赖安装
+##### 1.2.1 依赖安装
 
 - 安装 gtsam
 
@@ -165,7 +165,7 @@ typora-root-url: ..\picture
   sudo make install
   ```
 
-##### 2.2.2 LeGO-LOAM 安装
+##### 1.2.2 LeGO-LOAM 安装
 
 - 源码下载与编译
 
@@ -180,7 +180,7 @@ typora-root-url: ..\picture
   ```
   
 
-##### 2.2.3 SLAM建图
+##### 1.2.3 SLAM建图
 
 
 - 配置参数解析与修改
@@ -217,6 +217,12 @@ typora-root-url: ..\picture
   extern const float ang_bottom = 55; //最下方激光与水平面夹角
   extern const int groundScanInd = 10; // 地面线数，不确定依据是什么
   ```
+
+  https://www.robosense.cn/rslidar/RS-Helios
+
+  建图点云聚类
+
+  
 
   重新编译
 
@@ -275,9 +281,13 @@ typora-root-url: ..\picture
   
   https://blog.csdn.net/weixin_44444810/article/details/121659270
 
-#### 2.3 使用移动小车平台进行激光点云数据采集
 
-##### 2.3.1 平台组成
+
+#### 1.3 使用移动小车平台进行激光点云数据采集
+
+<img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022237707.jpg" alt="2022-06-10 223453" style="zoom: 25%;" />
+
+##### 1.3.1 平台组成
 
 - 移动小车
 
@@ -302,8 +312,12 @@ typora-root-url: ..\picture
 - 远程桌面
 
   可使用手机、笔记本或平板电脑等移动设备通过Nomachine实现远程桌面查看与控制，与Nano同时连接至无线路由器，实现局域网内通信。
+  
+  ![2022-06-10 221112](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022241718.jpg)
 
-##### 2.3.2 采集流程
+##### 1.3.2 采集流程
+
+<img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022239596.jpg" alt="2022-06-10 223721" style="zoom:20%;" />
 
 - 节点运行
 
@@ -322,7 +336,7 @@ typora-root-url: ..\picture
   #激光雷达点云采集
   roslaunch rslidar_sdk start.launch
   #点云格式转换
-  rosrun rs_to_velodyne rs_to_velodyne XYZIRT XYZIRT
+  rosrun rs_to_velodyne rs_to_velodyne XYZIRT XYZIR
   # 启动mavros，ros与飞控通信，配置串口参数与远程地面站地址参数
   roslaunch mavros px4.launch fcu_url:="/dev/ttyTHS1:921600" gcs_url:="udp://@192.168.1.100"
   # 启动T265双目相机，VSLAM定位，可不使用
@@ -335,6 +349,10 @@ typora-root-url: ..\picture
   roslaunch px4_command px4_vel_controller.launch
   ```
 
+- 运动控制
+
+  可使用遥控器或手机蓝牙软件进行遥控，手机蓝牙遥控可调速。
+
 - 数据采集
 
   使用rosbag录制rostopic方式记录数据
@@ -343,7 +361,7 @@ typora-root-url: ..\picture
   rosbag record -o rslidar.bag /velodyne_points /mavros/imu/data /usb_cam/image_raw
   ```
 
-  数据采集结束 `Ctrl+c`必须正常结束终端，否则bag文件损坏无法读取
+  数据采集结束 `Ctrl+c`，必须正常结束终端，否则bag文件损坏无法读取。
 
   相关topic如下：
 
