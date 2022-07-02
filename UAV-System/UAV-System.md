@@ -359,15 +359,15 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 
   将无人机端 Nano 与地面端电脑连接同一WIFI，即同一无线路由器，保证在同一局域网内，在无人机端与地面端电脑分别运行Nomachine，在地面端 Nomachine 输入无人机端 Nano 网络地址。
 
-  图片
-
   查看Nano无线网卡IP地址
 
   ```shell
   ifconfig
   ```
-
+  
   其中`wlan0`为无线网卡，其他为有线网卡等。
+
+  图片
 
   <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206291544057.png" alt="image-20220629154400924" style="zoom:67%;" />
   

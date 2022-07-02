@@ -294,3 +294,28 @@ git tag # 查看标签
 
 ##### 2.3.2 操作标签
 
+删除标签
+
+```shell
+git tag -d v1.0
+```
+
+推送标签至远程
+
+```shell
+git push origin v1.0
+```
+
+一次性推送所有标签至远程
+
+```shell
+git push origin --tags
+```
+
+删除远程标签
+
+```shell
+git tag -d v1.0
+git push origin :refs/t
+```
+
