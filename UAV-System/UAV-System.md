@@ -75,7 +75,7 @@ typora-root-url: ..\picture
 
    - 电调类型
 
-     电调通过来自飞控的PWM信号或其他协议控制信号将锂电池电源分出电机电路并加以控制，根据具体指令实现电机的转动。实验室无人机平台分别使用单电机电调与四合一电调。电调的最高电压为Li-Po XS（X节锂电池）表示，4S电池要求电调所支持的最高电压为16.8V以上。最大电流通常是10A、15A、20A、30A或40A。如果在无人机飞行过程中需要电机高速转动，就需要更高的电压和更大的电流，通常在450mm轴距以下的多旋翼中采用20A以下的电调即可满足需要。
+     电调通过来自飞控的PWM信号或其他协议控制信号将锂电池电源分出电机电路并加以控制，根据具体指令实现电机的转动。实验室无人机平台分别使用单电机电调与四合一电调。电调的最高电压为 Li-Po XS（X节锂电池）表示，4S电池要求电调所支持的最高电压为16.8V以上。最大电流通常是10A、15A、20A、30A或40A。如果在无人机飞行过程中需要电机高速转动，就需要更高的电压和更大的电流，通常在450mm轴距以下的多旋翼中采用20A以下的电调即可满足需要。
 
      <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206222302605.png" alt="image-20220622230255399" style="zoom: 33%;" />
 
@@ -170,11 +170,11 @@ typora-root-url: ..\picture
 
 - 选型与安装
 
-  型号：PX4FLOW光流计
+  型号：PX4FLOW 光流计
 
   通过数据线连接至飞控板的`I2C`接口。
 
-  安装方向可按照默认方向进行安装，如果安装方向与默认方向不同，应在QGC内进行参数修改。
+  安装方向可按照默认方向进行安装，如果安装方向与默认方向不同，应在 QGC 内进行参数修改。
 
   <img src="https://docs.px4.io/master/assets/img/px4flowalignwithpixhawk.72ce1e4f.jpg" alt="PX4Flow align with Pixhawk" style="zoom: 80%;" />
 
@@ -182,7 +182,7 @@ typora-root-url: ..\picture
 
 - 镜头对焦
 
-  使用USB数据线连接光流计与PC，可在QGC中观察光流计的成像，通过观察一定距离处成像画面的清晰程度进行对焦，官方建议3m以上，室内定位可设置为1.5m左右。
+  使用 USB 数据线连接光流计与 PC，可在 QGC 中观察光流计的成像，通过观察一定距离处成像画面的清晰程度进行对焦，官方建议3m以上，室内定位可设置为1.5m左右。
 
   https://blog.csdn.net/liberatetheus/article/details/77914246
 
@@ -242,6 +242,8 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 - 机架选择
 
   可选择`DJI F450`或`DJI F330`，选择其他机架可能无法正常控制电机，且默认PID参数不同。
+  
+  ![image-20220703160006794](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031600971.png)
 
 ##### 2.1.3 参数配置
 
@@ -300,7 +302,7 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 
 - 设置流程
 
-  图片
+  ![image-20220703160117459](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031601573.png)
 
 #### 2.2 Jetson Nano 机载电脑 Ubuntu 18.04
 
@@ -353,22 +355,19 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 
 - 远程桌面软件
 
-  使用 Nomachine 或 ToDesk 作为远程桌面查看与控制软件，局域网内使用Nomachine，互联网使用ToDesk。
+  使用 Nomachine 或 ToDesk 作为远程桌面查看与控制软件，局域网内使用 Nomachine，互联网使用ToDesk。
 
 - 远程控制流程
 
-  将无人机端 Nano 与地面端电脑连接同一WIFI，即同一无线路由器，保证在同一局域网内，在无人机端与地面端电脑分别运行Nomachine，在地面端 Nomachine 输入无人机端 Nano 网络地址。
+  将无人机端 Nano 与地面端电脑连接同一 WIFI，即同一无线路由器，保证在同一局域网内，在无人机端与地面端电脑分别运行 Nomachine，在地面端 Nomachine 输入无人机端 Nano 网络地址。
 
-  查看Nano无线网卡IP地址
-
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206291544057.png" alt="image-20220629154400924" style="zoom:67%;" />
+  查看 Nano 无线网卡IP地址
+  
   ```shell
   ifconfig
   ```
-  
+
   其中`wlan0`为无线网卡，其他为有线网卡等。
-
-  图片
-
-  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206291544057.png" alt="image-20220629154400924" style="zoom:67%;" />
   
-  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031553792.png" alt="Screenshot from 2022-07-01 20-18-28" style="zoom: 80%;" />

@@ -220,10 +220,6 @@ typora-root-url: ..\picture
 
   https://www.robosense.cn/rslidar/RS-Helios
 
-  建图点云聚类
-
-  
-
   重新编译
 
   ```shell
@@ -247,11 +243,13 @@ typora-root-url: ..\picture
   # rosbag中激光雷达点云数据与IMU数据话题名称一致，否则需要更改
   rosbag play *.bag --clock --topic /velodyne_points /imu/data
   ```
+  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031529275.png" alt="image-20220703152936018" style="zoom: 50%;" />
 
 
 - 点云地图保存与查看
 
-  接近建图结束时执行record，录制建出地图的话题
+  勾选左侧`Map Cloud`，非`Map Cloud (stack)`，接近建图结束时执行record，录制建出地图的话题  
 
   ```shell
   rosbag record -o out /laser_cloud_surround
@@ -268,6 +266,8 @@ typora-root-url: ..\picture
   ```shell
   pcl_viewer *.pcd
   ```
+
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031551091.png" alt="Screenshot from 2022-07-03 15-38-16" style="zoom:50%;" />
 
   https://blog.csdn.net/m0_37931718/article/details/107832573
 
