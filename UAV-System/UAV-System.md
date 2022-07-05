@@ -304,6 +304,18 @@ PX4由苏黎世联邦理工学院的计算机视觉与几何实验室的一个�
 
   ![image-20220703160117459](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207031601573.png)
 
+- 遥控器对应状态
+
+  
+  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207042152743.png" alt="image-20220704215200998" style="zoom: 17.3%;" />
+  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207042153455.jpg" alt="2022-07-03 193619" style="zoom:20%;" />
+  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207042221126.jpg" alt="2022-07-03 193626" style="zoom:20%;" />
+  
+  <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207042221877.jpg" alt="2022-07-03 193633" style="zoom:20%;" />
+
 #### 2.2 Jetson Nano 机载电脑 Ubuntu 18.04
 
 ##### 2.2.1 系统备份与烧录
