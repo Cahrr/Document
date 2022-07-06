@@ -281,13 +281,15 @@ typora-root-url: ..\picture
   
   https://blog.csdn.net/weixin_44444810/article/details/121659270
 
+#### 1.3 A-LOAM 算法激光雷达建图
 
+##### 1.3.1 依赖安装
 
-#### 1.3 使用移动小车平台进行激光点云数据采集
+#### 1.4 使用移动小车平台进行激光点云数据采集
 
 <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022237707.jpg" alt="2022-06-10 223453" style="zoom: 25%;" />
 
-##### 1.3.1 平台组成
+##### 1.4.1 平台组成
 
 - 移动小车
 
@@ -315,7 +317,7 @@ typora-root-url: ..\picture
   
   ![2022-06-10 221112](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022241718.jpg)
 
-##### 1.3.2 采集流程
+##### 1.4.2 采集流程
 
 <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202207022239596.jpg" alt="2022-06-10 223721" style="zoom:20%;" />
 
