@@ -1,10 +1,6 @@
----
-typora-root-url: ..\picture
----
-
 #  Git本地管理及Github远程管理学习
 
-## Git本地管理
+## Git
 
 ### 1. Git本地管理
 
