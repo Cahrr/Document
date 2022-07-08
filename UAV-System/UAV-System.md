@@ -10,9 +10,9 @@ typora-root-url: ..\picture
 
 ### 1. 硬件
 
-![platform2](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206230000540.png)
+<img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206230000540.png" alt="platform2" style="zoom:50%;" />
 
-![platform1](https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206230000499.png)
+<img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206230000499.png" alt="platform1" style="zoom:50%;" />
 
 #### 1.1 无人机本体
 <img src="https://cnmafia.oss-cn-beijing.aliyuncs.com/Typora_img/202206222226984.png" alt="未标题-2" style="zoom: 15%;" />
