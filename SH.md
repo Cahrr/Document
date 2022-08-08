@@ -66,3 +66,25 @@ After my graduation, with a strong desire for autonomous vehicles, I, as a full-
 
 After that I researched the indoor positioning of UAVs, using binocular cameras fused with IMU to achieve high precision positioning. Based on this, I did two engineering projects, one is a UAV-based position tracking system for swimmers, and the other is a mobile platform-based autonomous landing system for UAVs. One of the projects has been published as an EI-indexed paper. The other is under research and expected to be submitted to SCI-indexed journals. 
 
+
+
+我的名字是桑帆，我的学生ID是001. 在五月份我收到了贵校机器人与人工智能专业的录取通知。我在六月交了这个录取的留位费。然而，我目前的情况恐怕不能允许我前往英国开始这个项目。我想申请放弃这个机会。
+
+请允许我描述一下我目前的糟糕情况，我来自中国，并且中国的新冠疫情防控政策一直很严格，不幸的是，我所在的城市在今年夏天遭遇了严重的疫情，政府采取了严格的防控措施，包括禁止一些商业活动，我家的产业因此受到了很大的影响，我父母的收入急剧下降，并且花费了很多积蓄，无力负担过多我的学习与生活费用。因此，这笔留位费对于现在我的家庭来说十分重要。
+
+能够获得前往格拉斯哥大学读书的机会对我来说是非常珍贵和幸运的，但是现实的经济压力让我不得不放弃这个机会，我感到非常地遗憾与抱歉，希望能获得学校的理解与帮助。
+
+最后，我非常希望学校可以退回留位费，我为此带来的不便道歉。如果可以获得允许，我将无比感激。
+
+
+
+My name is Fan Sang (student ID: 2806228) and I received an unconditional offer for Msc of Robotics and Artificial Intelligence in March this year (Application number: 01039689). I have paid the deposit fee for this program in April. But I am afraid that my current situation does not allow me to go to the UK to start this program. I would like to apply for a waiver of this opportunity.
+
+Please allow me to describe my current situation. I am from China, and China has a very strict policy on the prevention and control of the COVID-19 pandemic. Unfortunately, my city was hit by a serious epidemic this summer, and the government took strict measures, including traffic control and banning business activities. My parents' income has dropped significantly and they have spent a lot of savings. So they cannot afford to pay too much for my studies and living expenses. Therefore, this deposit fee is very important to my family now.
+
+The opportunity to study at the University of Glasgow is very precious and fortunate for me, but I am very sorry and regretful that I have to give up this opportunity due to financial pressure.
+
+Finally, I really hope that I can get the deposit fee. I would like to apologize for any inconvenience caused by this. I will be grateful.
+
+
+
